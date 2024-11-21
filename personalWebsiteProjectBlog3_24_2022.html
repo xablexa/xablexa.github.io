@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Axel Delano Fabiano Bax</title>
+    <link rel="stylesheet" type="text/css" href="personalWebsiteStyle.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <div class=wrapper>
+                <div class="navbar" id="navbar">
+                    <a href="index.html" id="home" type="label">Home</a>
+                    <a href="personalWebsiteBiography.html" id="biography" type="label">Biography</a>
+                    <a href="personalWebsiteProjects.html" id="projects" type="label">Projects</a>
+                    <a href="personalWebsiteSkills.html" id="skills" type="label">Skills</a>
+                    <a href="personalWebsitePublications.html" id="publication" type="label">Publications</a>
+                    <a href="personalWebsiteProjectBlog.html" id="publication" type="label">Project Blog</a>
+                </div>
+            </div>
+
+            <div class="banner">
+            </div>
+
+
+            <div class="blogPosts">
+                <div class="postBlurb">
+                    <h2>3/24/2022 - A Quick Update on My Thoughts on Copyright</h2>
+                    <p class="blogTextFull" id="noPicture" href="personalWebsiteProjectBlog3_24_2022.html">
+                        I wanted to revisit a question that I implied during the last post. We questioned whether data contains meaningful content. In short, of course
+                        data contains meaningful content, otherwise there would be no point in gathering data! However, let's forget for a moment that our 'data'
+                        contains strings of text, which convey the content of King's novels. Instead of releasing plain text copies of King's novels that we have
+                        cleaned up, let's instead process the data further into some kind of structure that would be useful for data analysis. A dataframe in R could
+                        be such a structure. Converting the plain text into such a structure is necessary for processing and does not yet remove any pieces from
+                        the text, meaning all of the text is still preserved. This data structure could easily be exported as a raw csv file for others to utilize
+                        for research. Would this csv file still be considered to be King's original text? Or would it be more apt to call it data, since no human
+                        would realistically read an entire novel in such a format. One potential argument is that someone who knows how to handle strings could
+                        splice apart this dataframe and reform the text back into a text format with relatively little effort. Therefore, despite the format, this
+                        csv file is still more text than data and falls under copyright still.
+                        <br>
+                        <br>
+                        However, for any kind of natural language processing (or really any kind of data analyses), there are multiple steps of pre-processing. For
+                        example, we need to remove stop words and calculate other low-level properties, such as word frequencies. Removing stop words immediately
+                        renders this text unreadable for humans and having word frequencies available is not information that any human would utilize in reading the
+                        given text. This structure feels a lot more like data now, and it is still raw enough that many higher-level analyses can still be built upon
+                        this information. We then decide to release this pre-processed csv file in a repository (ie one csv file for each novel). No one can realistically
+                        go back and turn these files into a complete text (this is actually a really interesting NLP problem itself; it would be tricky
+                        to accurately replace stop words for an entire text without any mistakes), which means that we are (theoretically) not at risk for violating
+                        copyright since we are now releasing data instead of written text. As long as our colleague trusts how we did this pre-processing, this
+                        would be a more effective way to share data for reproducibility.
+                        <br>
+                        <br>
+                        This of course assumes that data derived from a fictional text is a separate entity than the text itself, which again, falls into a bit of
+                        a grey area: Does such data fall under copyright law? Does it fall under data privacy laws? Is it more similar to releasing a written textual
+                        analysis of the novel? Does it need to be its own category entirely?
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="bottomCredits">
+            <p class="bottomCreditsText">Last update: 3/22/2022 by Axel Bax. Fun fact: This website was built and is maintained by me!</p>
+        </div>
+    </div>
+    <script>
+
+    </script>
+</body>
+
+</html>

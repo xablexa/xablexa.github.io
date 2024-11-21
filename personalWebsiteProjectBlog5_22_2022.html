@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Axel Delano Fabiano Bax</title>
+    <link rel="stylesheet" type="text/css" href="personalWebsiteStyle.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <div class=wrapper>
+                <div class="navbar" id="navbar">
+                    <a href="index.html" id="home" type="label">Home</a>
+                    <a href="personalWebsiteBiography.html" id="biography" type="label">Biography</a>
+                    <a href="personalWebsiteProjects.html" id="projects" type="label">Projects</a>
+                    <a href="personalWebsiteSkills.html" id="skills" type="label">Skills</a>
+                    <a href="personalWebsitePublications.html" id="publication" type="label">Publications</a>
+                    <a href="personalWebsiteProjectBlog.html" id="publication" type="label">Project Blog</a>
+                </div>
+            </div>
+
+            <div class="banner">
+            </div>
+
+
+            <div class="blogPosts">
+                <div class="postBlurb">
+                    <h2>5/22/2022 - Adding access to deprecated maps from older projects</h2>
+                    <p class="blogTextFull" id="noPicture" href="personalWebsiteProjectBlog5_12_2022.html">
+                        The purpose of this blog post is to briefly revisit two old projects that were not linked through my website,
+                        but were linked through projects in symposiums that no longer offer access, or were lost to major
+                        updates on my website. You can find the links here:
+                        <br>
+                        <br>
+                        <a href="Updated%20Crime%20Map%20Display%20Toggles.html">Plot Map of the Eastern District of Baltimore 2019</a>
+                        <br>
+                        <a href="leaflet%20neighborhoods%20density%20bins.html">Chloropleth Map of Crime by Baltimore Neighborhood 2019</a>
+                        <br>
+                        <br>
+                        The first of these maps was developed as a follow-up study to my role on the <a href="personalWebsiteProjects.html" id="projects" type="label">Billie Holiday Project</a>.
+                        I wanted to look at the exact same area in Baltimore as our crime map from the 1920's and see how the current
+                        day crime data compared to back then. Essentially, I was asking: 'has it gotten any better?' You can toggle
+                        through the different types of incidents or click on a dot for a specific type of crime.
+                        <br>
+                        <br>
+                        The second map is a more general version of this same question. If crime has improved in this neighborhood,
+                        does that mean that crime is low everywhere, or just localized to particular places? (considering the history
+                        of redling in Baltimore, the hypothesis is that these areas would still be feeling the effects of redlining
+                        which were never remedied) Additionally, I also wanted to expand my coding ability in R, specifically for spatial
+                        mapping, and this provided a nice challenge to work on these skills. The resulting map shows each neighborhood
+                        in Baltimore and the number of incidents divided by the total square miles of that neighborhood. The idea was
+                        to get a sense of the density of crime, rather than just the number of crimes in a given area. I could've done
+                        this by looking at the population in each neighborhood, but I honestly didn't know how to combine that information
+                        at the time (nor did I think to); in the end, both achieve a general sense of density, and land area gives you
+                        a better sense of 'how safe am I walking around here?' since it's easier to understand the size of an area than
+                        the population for most people.
+                        <br>
+                        <br>
+                        Both of these projects were done using leaflet in R, alongside some other geospatial packages. I would provide my
+                        code for these two projects, but the code no longer works and I don't currently feel like revisiting these projects
+                        to fix it.
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="bottomCredits">
+            <p class="bottomCreditsText">Last update: 3/22/2022 by Axel Bax. Fun fact: This website was built and is maintained by me!</p>
+        </div>
+    </div>
+    <script>
+
+    </script>
+</body>
+
+</html>

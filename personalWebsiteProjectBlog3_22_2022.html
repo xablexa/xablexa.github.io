@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Axel Delano Fabiano Bax</title>
+    <link rel="stylesheet" type="text/css" href="personalWebsiteStyle.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <div class=wrapper>
+                <div class="navbar" id="navbar">
+                    <a href="index.html" id="home" type="label">Home</a>
+                    <a href="personalWebsiteBiography.html" id="biography" type="label">Biography</a>
+                    <a href="personalWebsiteProjects.html" id="projects" type="label">Projects</a>
+                    <a href="personalWebsiteSkills.html" id="skills" type="label">Skills</a>
+                    <a href="personalWebsitePublications.html" id="publication" type="label">Publications</a>
+                    <a href="personalWebsiteProjectBlog.html" id="publication" type="label">Project Blog</a>
+                </div>
+            </div>
+
+            <div class="banner">
+            </div>
+
+
+            <div class="blogPosts">
+                <div class="postBlurb">
+                    <h2>3/22/2022 - A Brief Discourse on Copyright</h2>
+                    <p class="blogTextFull" id="noPicture" href="personalWebsiteProjectBlog3_22_2022.html">
+                        The purpose of this post is to ask some legal questions before delving into the technical aspects of my next project. I want to make it clear that
+                        this is an opinion piece which asks many questions and offers very few answers, while remaining purely hypothetical. In the past, I had
+                        an interest in Early American Gothics which meant that any texts I wanted to use were in the public domain, simply due to their date of
+                        publication. This meant that I could do pretty much whatever I wanted with these texts, including digitizing them into plain-text copies
+                        that I could analyze (of course, the challenge with these older texts was the actual digitization since accessible copies are sometimes poorly
+                        preserved!).
+                        <br>
+                        <br>
+                        However, let's imagine another scenario: I want to, hypothetically, digitize all of Stephen King's horror novels that are sitting on my shlef
+                        in order to analyze word choice changes and
+                        sentiment changes over the course of his career, and perhaps compare that chronology to contemporary horror movies/novels that were published
+                        in that time. In order to do this, I would need plain-text copies of his novels, which are not in the public domain, and would therefore
+                        beg the question of what we are allowed to do with them due to copyright.
+                        <br>
+                        <br>
+                        Generally speaking, if you are doing academic work and you are not making money by using a text (or other media outside of our little
+                        scenario), you can usually claim 'fair use.' Yet fair use typically means pulling a quote or other small excerpt, rather than using every
+                        single word from a given text. I'll go into detail later about what factors decide fair use after we have a little bit of fun.
+                        <br>
+                        <br>
+                        Let's continue our hypothetical: I go ahead and scan all of Stephen King's novel using some sophisticated system that turns his physical books
+                        into perfect plain text documents that we can conduct various NLP analyses on. In the subsequent paper that I write, I use these results to
+                        make some kind of insightful claim about King's writing style. In good practice, I post a repository of my code and list of texts used, as
+                        well as details on how certain graphs/figures were produced. Do I provide a repository of the plain-text copies of the novels I used?
+                        <br>
+                        <br>
+                        On the one hand, reproducability is essential to the scientific process and the more information available, the more it is reproducible
+                        and generally experimentally sound. On the other hand, we are providing the entire text of multiple copyrighted novels, which someone could
+                        freely access and then use for non-academic purposes. Does this repository still fall under fair use? I would imagine that it would not.
+                        Would the same project, but without a public repository of texts available be fair use? This is a little bit of grey area. I bought all
+                        of the books, which means I should be able to do anything I want with these physical copies, including scanning them and digitizing them (or burning them if I so chose),
+                        as long as I'm not then sharing those scans with anyone. On the other hand, I am making a complete copy of the text of the novels,
+                        which does not feel like fair use when worded so generally, but suddenly feels fair use if I switch out 'text' with 'data.' This feels
+                        even more confusing if I were to choose 'content' instead of 'text' or 'data' since the question appears: does data still contain meaningful
+                        content?
+                        <br>
+                        <br>
+                        Confused yet? Let's expand this hypothetical further: suppose I am a professor (perhaps one day!) and a colleague of mine in the same department
+                        wants to do a follow up analysis to my Stephen King project because they found it to be so insightful! Because I own all of the King novels
+                        and because the plain-text I derived from them shouldn't be shared in order to not violate copyright concerns, I ought to not share these plain
+                        texts because my colleague could theoretically leak these texts which would mean that my use of the texts is probably no longer fair use. Does
+                        this feel silly? Does it feel a little bit like being labelled a criminal for sharing your netflix password with a close friend? I suppose if
+                        I trusted my colleague to not leak these texts, they could claim to have performed the exact same process that I have in order to end up with
+                        identical plain text copies, and no one would ever be able to know if indeed this claim is false.
+                        <br>
+                        <br>
+                        Well we need not lose too much sleep over all of these questions and moral quandries--there is some precedence for the very question of whether
+                        text data from books falls under fair use. In particular, there are two court cases that are useful: <a href="https://en.wikipedia.org/wiki/Authors_Guild,_Inc._v._Google,_Inc.">
+                        Authors Guild, Inc. v. Google, Inc.</a> and
+                        <a href="https://en.wikipedia.org/wiki/Authors_Guild,_Inc._v._HathiTrust">Authors Guild, Inc. v. HathiTrust</a>. In summation, Google began to digitize texts by scanning them
+                        and making what was essentially a virtual library where users could view a given book online. Due to <a href="https://en.wikipedia.org/wiki/Optical_character_recognition">OCR</a>
+                        errors being likely, scanned pages were
+                        available for users to view instead of plain-text (this allows users to self-verify). Initially, Google only used books in the public domain,
+                        so there weren't really any problems, but then they established library partnerships with various institutions and began the process for books
+                        that had copyrights. Publishers obviously weren't too happy and a lawsuit ensued. Through a lengthy process of settlements and appeals, it was
+                        agreed upon that the Google Books program fell under fair use, though many questions remain. This ruling was the basis for controlled digital lending (CDL), which suggests
+                        that entities could 'lend' digital copies of a book much like a physical library could. However, this concept is currently being testing in court
+                        (Hachette v. Internet Archive) so we don't know if there is a legal basis for this concept.
+                        <br>
+                        <br>
+                        Obviously, this scale is much larger and more complex than the questions we are dealing with in our hypothetical, but these cases are closely
+                        related to our problem. Ultimately, we should ask ourselves whether this process violates the four factors in #17 U.S. Code § 107:
+                        1. The purpose and character of the use, including whether such use is of commercial nature or is for nonprofit educational
+                        purposes. 2. The nature of the copyrighted work. 3. The amount and sustainability of the portion used in relation to the copyrighted work as a whole.
+                        4. the effect of the use upon the potential market for or value of the copyrighted work. Utilizing these four factors, we can estimate whether
+                        our process falls under fair use.
+                        <br>
+                        <br>
+                        1. We are using this for nonprofit and educational purposes. We should be safe here.
+                        <br>
+                        2. We are not using these texts to copy any themes or other aspects of King's work. We are probably safe here too.
+                        <br>
+                        3. We are using the entire text rather than an excerpt. We could be in trouble here, but if we are only sharing graphs and other conclusions
+                        based on our analysis, we should probably be fine, but there <i>could</i> be grounds for argument here--it would mostly depend on what
+                        we actually share externally (think back to the quesiton of sharing the plain text repository).
+                        <br>
+                        4. Unless our paper becomes very famous and actively changes the sales of King's books, this should not be a problem either. Odds are, sales
+                        would only increase! However, in the event that we negatively changed the sales of King's books, an argument could be made that our final paper
+                        is the same as a criticism of the most recent Broadway play that you might read in a newspaper. I think we're probably safe on this one too.
+                        <br>
+                        <br>
+                        Utilizing these factors, I think we can feel safer about creating plain text copies of these copyrighted works for our analyses, as long as we
+                        are not publicly sharing these files. For the issue of sharing your files with your colleagues, I will let you ponder whether you would trust
+                        them with your Netflix password...I know I wouldn't trust any of my colleagues! More importantly, at the end of the
+                        day we should ask ourselves if Stephen King (or more specifically, his publishers) would actually sue us for such an endeavor. I'd like to
+                        think not! I hope that this discourse helps us to think through the ramifications that our work as researchers might have beyond our actual research
+                        itself, or is at least somewhat informative. I also think that it is good practice to consider such things before embarking on potential research
+                        projects; we'll see if my OCR project is successful or not!
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="bottomCredits">
+            <p class="bottomCreditsText">Last update: 3/22/2022 by Axel Bax. Fun fact: This website was built and is maintained by me!</p>
+        </div>
+    </div>
+    <script>
+
+    </script>
+</body>
+
+</html>

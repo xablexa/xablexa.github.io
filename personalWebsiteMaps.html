@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Axel Delano Fabiano Bax</title>
+    <link rel="stylesheet" type="text/css" href="personalWebsiteStyle.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="content" id="rand_img">
+            <div class=wrapper>
+                <div class="navbar" id="navbar">
+                    <a href="index.html" id="home" type="label">Home</a>
+                    <a href="personalWebsiteBiography.html" id="biography" type="label">Biography</a>
+                    <!--
+                    <a href="personalWebsiteProjects.html" id="projects" type="label">Projects</a>
+                    <a href="personalWebsiteSkills.html" id="skills" type="label">Skills</a>
+                -->
+                    <a href="personalWebsitePublications.html" id="publication" type="label">Publications</a>
+                    <a href="personalWebsiteMaps.html" type="label">Maps</a>
+                    <!--
+                    <a href="personalWebsiteProjectBlog.html" id="publication" type="label">Project Blog</a>
+                    -->
+                </div>
+            </div>
+
+            <div class="banner">
+                <p id="bannerGap"></p>
+            </div>
+
+            <div id="arrow">
+                <p id="arrowText">Scroll down to see the gallery.
+                    <br>V
+                </p>
+            </div>
+            <p class="elevatorPitch">I completed my MS in Geographic Information Systems at JHU in 2024. However, even before that I had an interest in making maps. The 
+                gallery below shows a few of them. For more context on any maps, message me directly. You can also see a new background of Baltimore by 
+                refreshing the page. Enjoy!
+            </p>
+            <div class="images">
+                <!--
+                <a href="personalWebsiteBiography.html"><img src="personal.jpg" id="personal"></a>
+                <div class="personalOverlay">[Biography]</div>
+                -->
+                <!--
+                <div class="imageContainer">
+                    <a href="personalWebsiteBiography.html"><img src="personal.jpg" id="personal"></a>
+                    <p class="personalOverlay">[Biography]</p>
+                </div>
+                -->
+                <a href="leaflet neighborhoods density bins.html"><img src="leafletMap.PNG" id="map1"></a>
+                <a href="Updated Crime Map Display Toggles.html"><img src="crimeMap.JPG" id="map2"></a>
+                <a><img src="billieMapOld.png" id="map3"></a>
+                <a><img src="GIS_FinalProject.jpg" id="map5"></a>
+                <a><img src="capstoneEllipseMap.png" id="map4"></a>
+                <a><img src="capstoneNYMap.png" id="map7"></a>
+                <a><img src="capstoneWorldMap.png" id="map6"></a>
+                
+            </div>
+        </div>
+
+    </div>
+    <script>
+        var scrollMaxY = window.scrollMaxY || (document.documentElement.scrollHeight - document.documentElement.clientHeight)
+        window.onscroll = function() {
+            if ((window.pageYOffset / window.scrollMaxY * 100) < 3.5) {
+                document.getElementById("arrow").style.opacity = "1";
+            } else if ((window.pageYOffset / window.scrollMaxY * 100) < 7) {
+                document.getElementById("arrow").style.opacity = "0.9";
+            } else if ((window.pageYOffset / window.scrollMaxY * 100) < 10.5) {
+                document.getElementById("arrow").style.opacity = "0.8";
+            } else if ((window.pageYOffset / window.scrollMaxY * 100) < 14) {
+                document.getElementById("arrow").style.opacity = "0.7";
+            } else if ((window.pageYOffset / window.scrollMaxY * 100) < 17.5) {
+                document.getElementById("arrow").style.opacity = "0.6";
+            } else if ((window.pageYOffset / window.scrollMaxY * 100) < 21) {
+                document.getElementById("arrow").style.opacity = "0.5";
+            } else if ((window.pageYOffset / window.scrollMaxY * 100) < 24.5) {
+                document.getElementById("arrow").style.opacity = "0.4";
+            } else if ((window.pageYOffset / window.scrollMaxY * 100) < 28) {
+                document.getElementById("arrow").style.opacity = "0.3";
+            } else if ((window.pageYOffset / window.scrollMaxY * 100) < 31.5) {
+                document.getElementById("arrow").style.opacity = "0.2";
+            } else if ((window.pageYOffset / window.scrollMaxY * 100) < 35) {
+                document.getElementById("arrow").style.opacity = "0.1";
+            } else if ((window.pageYOffset / window.scrollMaxY * 100) < 38.5) {
+                document.getElementById("arrow").style.opacity = "0";
+            }
+            //            
+            //            if ((window.pageYOffset/window.scrollMaxY * 100) < 3.5) {
+            //                document.getElementById("body::-webkit-scrollbar-").style.background = "black";
+        };
+        
+        window.onload = function getRandomImage() {
+            //declare an array to store images
+            var randomImage = new Array();
+            //0,1,2,3,4,5
+            randomImage[0] = "Balt_contour_bluegr_c.png";
+            randomImage[1] = "Balt_contour_purplewh_c.png";
+            randomImage[2] = "Balt_contour_yor_c.png";
+            randomImage[3] = "Balt_contour_bw_c.png";
+            randomImage[4] = "Balt_contour_pinkbl_c.png";
+            randomImage[5] = "Balt_contour_pink_c.png";
+            randomImage[6] = "Balt_road_pink_c.png";
+            randomImage[7] = "Balt_road_purple_c.png";
+            randomImage[8] = "Balt_road_yor_c.png";
+            randomImage[9] = "Balt_road_redgr_c.png";
+            randomImage[10] = "Balt_road_bluegr_c.png";
+            randomImage[11] = "Balt_pub_yor_c.png";
+            randomImage[12] = "Balt_pub_blue_c.png";
+            randomImage[13] = "Balt_pub_red_c.png";
+            randomImage[14] = "Balt_pub_pink_c.png";
+            randomImage[15] = "Balt_pub_purple_c.png";
+            randomImage[16] = "Balt_buildings_yor_c.png";
+            randomImage[17] = "Balt_buildings_green_c.png";
+            randomImage[18] = "Balt_buildings_pink_c.png";
+            randomImage[19] = "Balt_buildings_grey_c.png";
+            randomImage[20] = "Balt_buildings_whiterd_c.png";
+            randomImage[21] = "Balt_buildings_bluepi_c.png";
+            randomImage[22] = "Balt_buildings_purpleyl_c.png";
+
+        // genrate a number and provide to genrate image accordingly
+        var number = Math.floor(Math.random()*randomImage.length); 
+         // return the images which are genrated
+         //var image_ind = randomImage[number]
+         //document.getElementById("rand_img").value = image_ind
+         return document.getElementById('rand_img').style = "background-image: url('" +randomImage[number]+"')"; 
+        } 
+        // document.body.style.container.content.backgroundImage = `url('${randomImage[number]}')`;
+
+    </script>
+</body>
+
+</html>

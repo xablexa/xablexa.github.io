@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Axel Delano Fabiano Bax</title>
+    <link rel="stylesheet" type="text/css" href="personalWebsiteStyle.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <div class=wrapper>
+                <div class="navbar" id="navbar">
+                    <a href="index.html" id="home" type="label">Home</a>
+                    <a href="personalWebsiteBiography.html" id="biography" type="label">Biography</a>
+                    <a href="personalWebsiteProjects.html" id="projects" type="label">Projects</a>
+                    <a href="personalWebsiteSkills.html" id="skills" type="label">Skills</a>
+                    <a href="personalWebsitePublications.html" id="publication" type="label">Publications</a>
+                </div>
+            </div>
+
+            <div class="banner">
+            </div>
+
+            <div class="Feminism">
+                <div id="title">
+                    <h2>Tracking Trends in Feminist Literary Criticism of Wide Sargasso Sea</h2>
+                    <h3>by Axel Bax</h3>
+                </div>
+                <div class="firstSection">
+                    <p class="introText">The goal of this project is to investigate: how has feminist literary criticism has changed over the last 50 years? Can we track these changes computationally?
+                        <br>
+                        <br>But why are these questions interesting or important? Even in a relatively short period of time, feminism has adapted as new ideology has been introduced to the methodology: defining feminism based on patriarchy has shifted to independent defining of feminism; expansions on who is represented by the term feminist have occurred; discussions of whether feminism should define women and how have occurred. In short, the interactions of feminist critics are constantly causing the entire field to shift and grow in order to accommodate new perspectives and modes of thought.
+                        <br>
+                        <br>By using a single text, we can effectively control the topic that each secondary source focuses on; any differences are due to analytical approach, but not due to text or general topic (since all are fundamentally feminist papers). Wide Sargasso Sea provides an ideal control primary text: it was published in 1966, so about 50 years have elapsed for feminist scholars to write about it; it has multiple geographic locations; it involves multiple races; and it explores class differences. All of these are topics explored by feminist scholars, but not necessarily at the same time.
+                        <br>
+                        <br>With this background knowledge of Wide Sargasso Sea and general feminist trends, we can make predictions about how these timelines might look! Rooney refers to the additive approach where a wider range of women are represented (Rooney, 2006). This addition implies that earlier texts will focus more on white, middle-class women than any other group. Over time, the addition of representation of other races, classes, sexual orientations, etc should occur. Therefore whiteness, and middle-classness should remain stable or even decrease over time, while everything else rises to match the early levels of whiteness and middle-classness. Another outcome that is possible with an expansion of identities is that whiteness and middle-classness still dominate, but there is a small rise in the variety of other representations. Graphically, this would be visible by having no instances of minority representation early on, and a rise in the variety of representation, even if the frequency does not rival that of whiteness and middle-classness in contemporary criticism. Rooney also mentions the seeming necessity for feminism to discuss masculinity in order to shine a light on feminist concepts; however, this shifted to a trend towards defining feminism independently from masculinity. It is possible that this shift will be observable in the analysis.
+
+                    </p>
+                    <div class="WSScover">
+                        <a href="https://en.wikipedia.org/wiki/Wide_Sargasso_Sea"> <img src="JeanRhys_WideSargassoSea.jpg" id="WSS"> </a>
+                    </div>
+                </div>
+
+                <div class="secondSection">
+                    <h3>Methodology</h3>
+                    <div class=methodologyBlock>
+                        <!--                        <h4>Digital Techniques</h4>-->
+                        <p class="methodologyText" id="box1"> This project primarily utilizes digital techniques, which is uncommon, but growing in the field of scholarly literature analysis. This choice, compared to more qualitative approaches, is the most effective way to present unbiased, long-term trends in the corpus. While the corpus is small enough for a single person to read in a relatively short period of time, the primary challenge of this corpus is the relatively long timescale of 50 years. To track those changes and weigh the difference one year could make versus five years is at least challenging for a researcher to do, but impossible without significant bias.
+                            <br>
+                            <br> Another benefit of using digital techniques, is that they paint broad strokes for what is an otherwise unexplored area. By looking at everything and noticing anomalies or trends in the data, a roadmap can be made. The scholars that follow after me will therefore not have to climb the entire mountain; instead, they can focus their energy on the large landmarks to expand upon my work in the future. Starting with digital techniques to identify larger trends, then following up with qualitative techniques to examine the smaller trends provides for a more efficient research method overall. Thus I encourage further examination of this project by others.
+                            <br>
+                            <br>This corpus was generated by searching JSTOR for feminist texts that also referenced Wide Sargasso Sea. Once several texts were assimilated, the bibliographies of those texts were also examined for other texts that focused on feminist critique of Wide Sargasso Sea. These files were then converted to plain text and loaded into R for data analysis.
+                        </p>
+                        <p class="methodologyText" id="box2"> Word frequency analysis is one of the most basic forms of text analysis. This method turns a text, or group of texts, into a spreadsheet which shows the number of occurrences (n) of a particular word in a particular text. Various other measurements can be inferred from this, such as rarity or how words pair with other words, but basic word frequency was more useful for this project. For each of the five topics that were graphed, a wordlist was generated of terms that match that topic. Most of these terms were generated not from a specific paper or website, but an amalgamation of the terms I ran across in researching this project that seemed common.</p>
+                        <p class="methodologyText" id="box3"> Sentiment analysis is rather simple, in that it examines exactly what it advertises: positive and negative sentiment in a text or group of texts. There are several different people or groups who have compiled sentiment data, which they have made available to be used in R packages (see citational information). The AFINN lexicon from Finn Årup Nielsen was used for this project, although the nrc lexicon from Saif Mohammad and Peter Turney was also explored, but not included in the analysis. The AFINN lexicon contains a list of words and a sentiment value for each word, ranged from -5 to 5. These values can be analyzed to find the average sentiment for a text, part of a text, or collection of texts. I matched the AFINN words with the list of words in my corpus, and then averaged the sentiment for each text, year, and country.</p>
+                        <p class="methodologyText" id="box4"> Topic modeling is another method of text analysis which links word similarity, and then sorts words into a specified number of groups which it identifies as distinct topics (although topics may have some overlapping words). This project initially seemed like an ideal one to perform topic modeling on; after all, we want to investigate the different subtopics of feminist critique across many different texts. However, the general topic is so pervasive that the topic modeling analysis was not able to reliably detect subtopics that looked distinctly different from each other, and so this method was retracted from the analysis.</p>
+                        <p class="methodologyText" id="box5"> The culmination of these methods is an interactive timeline (below). The controls for this timeline are presented in a matrix. As you go from left to right, you can vary the topic being analyzed (gender, race, critical terms, sentiment, and feminist terms, respectively). As you go from top to bottom, you can vary the x-axis of the graphs (text, year, and country of publication, respectively). This interactive timeline provides 15 different ways of understanding trends in terminology used by feminist scholars over the last 50 years, providing as many avenues as possible for identifying interesting outliers and trends.</p>
+                    </div>
+                </div>
+
+                <div class="thirdSection">
+                    <h3>Timeline of Changes</h3>
+                    <!--                    <div class="largerMatrixMenu">-->
+                    <div class="matrixMenu">
+                        <img src="MvFbyText.png" id="MvFbyText" class="matrixChunk">
+                        <img src="racebyText.png" id="racebyText" class="matrixChunk">
+                        <img src="methodbyText.png" id="methodbyText" class="matrixChunk">
+                        <img src="PvNbyText.png" id="PvNbyText" class="matrixChunk">
+                        <img src="fembyText.png" id="fembyText" class="matrixChunk">
+                        <img src="MvFbyYear.png" id="MvFbyYear" class="matrixChunk">
+                        <img src="racebyYear.png" id="racebyYear" class="matrixChunk">
+                        <img src="methodbyYear.png" id="methodbyYear" class="matrixChunk">
+                        <img src="PvNbyYear.png" id="PvNbyYear" class="matrixChunk">
+                        <img src="fembyYear.png" id="fembyYear" class="matrixChunk">
+                        <img src="MvFbyCountry.png" id="MvFbyCountry" class="matrixChunk">
+                        <img src="racebyCountry.png" id="racebyCountry" class="matrixChunk">
+                        <img src="methodbyCountry.png" id="methodbyCountry" class="matrixChunk">
+                        <img src="PvNbyCountry.png" id="PvNbyCountry" class="matrixChunk">
+                        <img src="fembyCountry.png" id="fembyCountry" class="matrixChunk">
+                        <!--                        <p id="sideMatrixText">Change Axis Type</p>-->
+                        <!--
+                        </div>
+                        <p id="sideMatrixText">Change Axis Type</p>
+                        <p id="bottomMatrixText">Change Data Type</p>
+-->
+                    </div>
+                    <p id="bottomMatrixText">Controls: The Y-axis varies the type of timeline. The X-axis varies the type of data visible.</p>
+                    <div class="timelineToggle">
+                        <img src="MvFbyText.png" id="MvFbyText2" class="timelineChunk">
+                        <img src="racebyText.png" id="racebyText2" class="timelineChunk">
+                        <img src="methodbyText.png" id="methodbyText2" class="timelineChunk">
+                        <img src="PvNbyText.png" id="PvNbyText2" class="timelineChunk">
+                        <img src="fembyText.png" id="fembyText2" class="timelineChunk">
+                        <img src="MvFbyYear.png" id="MvFbyYear2" class="timelineChunk">
+                        <img src="racebyYear.png" id="racebyYear2" class="timelineChunk">
+                        <img src="methodbyYear.png" id="methodbyYear2" class="timelineChunk">
+                        <img src="PvNbyYear.png" id="PvNbyYear2" class="timelineChunk">
+                        <img src="fembyYear.png" id="fembyYear2" class="timelineChunk">
+                        <img src="MvFbyCountry.png" id="MvFbyCountry2" class="timelineChunk">
+                        <img src="racebyCountry.png" id="racebyCountry2" class="timelineChunk">
+                        <img src="methodbyCountry.png" id="methodbyCountry2" class="timelineChunk">
+                        <img src="PvNbyCountry.png" id="PvNbyCountry2" class="timelineChunk">
+                        <img src="fembyCountry.png" id="fembyCountry2" class="timelineChunk">
+                        <p id="captionText">[INSERT TIMELINE TEXT HERE]</p>
+                    </div>
+                </div>
+
+                <div class="fourthSection">
+                    <h3>Analysis</h3>
+                    <p class="analysisText">While notable features of each graph can be viewed in their respective caption, there are some general trends that are worth noting, and seeing how they compare to what historical accounts of feminism suggest. The idea that expansion of representation over time occurs can be seen in the Frequency of Racial Terms by Text graph. Early texts focus mostly on blackness or whiteness, sometimes including other racial terms, while later texts frequently included all racial terms, and overall frequency of whiteness decreased. Additionally, in Frequency of Critical Terms by Text, references to geography, postcolonialism, race and class (although weaker than the other three) all increased over time as well, showing that this expansion is beyond simple reference to race, and encompasses other ideas of representation as well. There is also a general decline in the amount of masculine terms used over time, as well as decrease in neutral terms, suggesting more of a focus on feminist ideals as Rooney suggested. In the geographic analyses, trends related to colonialism become evident, especially when examining frequency of racial and critical terms. This tracks with a trend beyond feminism, which is the expanding attention toward postcolonialism and how literature changes in a postcolonial society.
+                        <br>
+                        <br>Reading this, you may wonder where the representation is for queer feminism, trans feminism, and lesbian feminism. Unfortunately, these texts did not have a large enough focus upon these topics for them to be as significant as race or gender, for example. To verify this, I checked the frequency of terms that relate to these disciplines. The terms gay, trans, and queer all appeared less than 10 times each across all texts. The term lesbian appeared 11 times, but 9 were within a single text, so it also did not have a high enough frequency to be useful. However, if we consider the content of Wide Sargasso Sea, this lack of representation makes sense. The primary text tackles issues such as race, gender, class, and geography rather head on. However, issues related to queerness and transness are not nearly as pervasive in Wide Sargasso Sea, if present at all.
+                    </p>
+                </div>
+
+                <div class="fifthSection">
+                    <p class="visualizationText">Other useful visualizations can be viewed below:</p>
+                    <img src="feministRef.JPG" id="feministRef">
+                    <img src="fembyYear2.png" id="fembyY">
+                </div>
+
+                <div class="sixthSection">
+                    <p class="sourcesText">Please download the Works Cited by clicking <a href="Citational%20Document%20and%20Supplementary%20Sources.pdf" download> here!</a> This document contains the works referenced in the text on this page,
+                        a list of the entire corpus used, R packages used, and any outside images used. Use <a href="WSS_Analysis_Code.zip" download>this</a> link to view the R code used to perform this analysis!</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="bottomCredits">
+            <p class="bottomCreditsText">Last update: 6/15/2021 by Axel Bax. Fun fact: This website was built and is maintained by me!</p>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        var sets = [{
+            name: "MvFbyText",
+            xType: 1,
+            yType: 1,
+            caption: "test caption"
+        }, {
+            name: "racebyText",
+            xType: 2,
+            yType: 1,
+            caption: "test caption"
+        }, {
+            name: "methodbyText",
+            xType: 3,
+            yType: 1,
+            caption: "test caption"
+        }, {
+            name: "PvNbyText",
+            xType: 4,
+            yType: 1,
+            caption: "test caption"
+        }, {
+            name: "fembyText",
+            xType: 5,
+            yType: 1,
+            caption: "test caption"
+        }, {
+            name: "MvFbyYear",
+            xType: 1,
+            yType: 2,
+            caption: "test caption"
+        }, {
+            name: "racebyYear",
+            xType: 2,
+            yType: 2,
+            caption: "test caption"
+        }, {
+            name: "methodbyYear",
+            xType: 3,
+            yType: 2,
+            caption: "test caption"
+        }, {
+            name: "PvNbyYear",
+            xType: 4,
+            yType: 2,
+            caption: "test caption"
+        }, {
+            name: "fembyYear",
+            xType: 5,
+            yType: 2,
+            caption: "test caption"
+        }, {
+            name: "MvFbyCountry",
+            xType: 1,
+            yType: 3,
+            caption: "test caption"
+        }, {
+            name: "racebyCountry",
+            xType: 2,
+            yType: 3,
+            caption: "test caption"
+        }, {
+            name: "methodbyCountry",
+            xType: 3,
+            yType: 3,
+            caption: "test caption"
+        }, {
+            name: "PvNbyCountry",
+            xType: 4,
+            yType: 3,
+            caption: "test caption"
+        }, {
+            name: "fembyCountry",
+            xType: 5,
+            yType: 3,
+            caption: "test caption"
+        }]
+//this bit can be cleaned up by actually using the array I created above; might also make the smooth lighting easier to code
+        
+        function matrixMenuControls() {
+            $("#MvFbyText").click(function() {
+                $("#MvFbyText2").show();
+                $("#captionText").show();
+                $("#captionText").text("This graph depicts the ratio of gendered terms across each text (x-axis) arranged chronologically. Note that texts 3 & 13 have greater gender neutral terms than female terms. There also tends to be peaks and troughs rather than random values, and while gendered terms tend to correlat with each other, some have larger differences between the amount of female vs male terms (2, 9, 14, 20, 21, 22, 24).");
+                $(".matrixChunk").css({
+                    '-webkit-filter': 'brightness(50%)',
+                });
+                $("#MvFbyText").css({
+                    '-webkit-filter': 'brightness(100%)',
+                });
+
+                $("#racebyText2").hide();
+                $("#methodbyText2").hide();
+                $("#PvNbyText2").hide();
+                $("#fembyText2").hide();
+                $("#MvFbyYear2").hide();
+                $("#racebyYear2").hide();
+                $("#methodbyYear2").hide();
+                $("#PvNbyYear2").hide();
+                $("#fembyYear2").hide();
+                $("#MvFbyCountry2").hide();
+                $("#racebyCountry2").hide();
+                $("#methodbyCountry2").hide();
+                $("#PvNbyCountry2").hide();
+                $("#fembyCountry2").hide();
+            });
+            $("#racebyText").click(function() {
+                $("#racebyText2").show();
+                $("#captionText").show();
+                $("#captionText").text("This graph depicts the ratio of racial terms across each text (x-axis) arranged chronologically. Note that text 16 contains 'Creole' in the title, which appears at the bottom of each page of the text, likely causing this text's data to be unreliable. Creole also appears relatively consistently in the middle of the chronology, but is sporadic later on.");
+                $(".matrixChunk").css({
+                    '-webkit-filter': 'brightness(50%)',
+                });
+                $("#racebyText").css({
+                    '-webkit-filter': 'brightness(100%)',
+                });
+
+                $("#MvFbyText2").hide();
+                $("#methodbyText2").hide();
+                $("#PvNbyText2").hide();
+                $("#fembyText2").hide();
+                $("#MvFbyYear2").hide();
+                $("#racebyYear2").hide();
+                $("#methodbyYear2").hide();
+                $("#PvNbyYear2").hide();
+                $("#fembyYear2").hide();
+                $("#MvFbyCountry2").hide();
+                $("#racebyCountry2").hide();
+                $("#methodbyCountry2").hide();
+                $("#PvNbyCountry2").hide();
+                $("#fembyCountry2").hide();
+            });
+            $("#methodbyText").click(function() {
+                $("#methodbyText2").show();
+                $("#captionText").show();
+                $("#captionText").text("This graph depicts the ratio of critical terms across each text (x-axis) arranged chronologically. Note that most outliers focus on race. Classism and Geographic tend to correlate to each other, especiall in texts 10 & 23. Race and postcolonialism tend to correlate as well (1, 10, 11, 12, 13, 16, 21, 23), especially in the middle section of the chronology. Psychoanalytical terms tended to occur earlier in the chronology and not as much later on.");
+
+                $(".matrixChunk").css({
+                    '-webkit-filter': 'brightness(50%)',
+                });
+                $("#methodbyText").css({
+                    '-webkit-filter': 'brightness(100%)',
+                });
+                $("#racebyText2").hide();
+                $("#MvFbyText2").hide();
+                $("#PvNbyText2").hide();
+                $("#fembyText2").hide();
+                $("#MvFbyYear2").hide();
+                $("#racebyYear2").hide();
+                $("#methodbyYear2").hide();
+                $("#PvNbyYear2").hide();
+                $("#fembyYear2").hide();
+                $("#MvFbyCountry2").hide();
+                $("#racebyCountry2").hide();
+                $("#methodbyCountry2").hide();
+                $("#PvNbyCountry2").hide();
+                $("#fembyCountry2").hide();
+            });
+            $("#PvNbyText").click(function() {
+                $("#PvNbyText2").show();
+                $("#captionText").show();
+                $("#captionText").text("This graph depicts the average sentiment across each text (x-axis) arranged chronologically. Notably, all sentiment is negative, on average for all texts. The data also tends to form peaks and troughs, but there are not any definitive conclusion that can be drawn.");
+                $(".matrixChunk").css({
+                    '-webkit-filter': 'brightness(50%)',
+                });
+                $("#PvNbyText").css({
+                    '-webkit-filter': 'brightness(100%)',
+                });
+
+                $("#racebyText2").hide();
+                $("#methodbyText2").hide();
+                $("#MvFbyText2").hide();
+                $("#fembyText2").hide();
+                $("#MvFbyYear2").hide();
+                $("#racebyYear2").hide();
+                $("#methodbyYear2").hide();
+                $("#PvNbyYear2").hide();
+                $("#fembyYear2").hide();
+                $("#MvFbyCountry2").hide();
+                $("#racebyCountry2").hide();
+                $("#methodbyCountry2").hide();
+                $("#PvNbyCountry2").hide();
+                $("#fembyCountry2").hide();
+            });
+            $("#fembyText").click(function() {
+                $("#fembyText2").show();
+                $("#captionText").show();
+                $("#captionText").text("This graph depicts the frequency of feminist terms across each text (x-axis) arranged chronologically. Note that outlier text 5 is 'The Madwoman and Her Languages: Why I Don't Do Feminist Literary Theory,' a relatively foundational piece of feminist scholarly work; many chronologically later papers likely used terms from this text. There is also more of a revival of these feminist terms in more recent texts, however, this could be due to my bias to the present when gathering these terms.");
+                $(".matrixChunk").css({
+                    '-webkit-filter': 'brightness(50%)',
+                });
+                $("#fembyText").css({
+                    '-webkit-filter': 'brightness(100%)',
+                });
+
+                $("#racebyText2").hide();
+                $("#methodbyText2").hide();
+                $("#PvNbyText2").hide();
+                $("#MvFbyText2").hide();
+                $("#MvFbyYear2").hide();
+                $("#racebyYear2").hide();
+                $("#methodbyYear2").hide();
+                $("#PvNbyYear2").hide();
+                $("#fembyYear2").hide();
+                $("#MvFbyCountry2").hide();
+                $("#racebyCountry2").hide();
+                $("#methodbyCountry2").hide();
+                $("#PvNbyCountry2").hide();
+                $("#fembyCountry2").hide();
+            });
+            $("#MvFbyYear").click(function() {
+                $("#MvFbyYear2").show();
+                $("#captionText").show();
+                $("#captionText").text("This graph depicts the frequency of gendered terms across each year.");
+                $(".matrixChunk").css({
+                    '-webkit-filter': 'brightness(50%)',
+                });
+                $("#MvFbyYear").css({
+                    '-webkit-filter': 'brightness(100%)',
+                });
+
+                $("#racebyText2").hide();
+                $("#methodbyText2").hide();
+                $("#PvNbyText2").hide();
+                $("#fembyText2").hide();
+                $("#MvFbyText2").hide();
+                $("#racebyYear2").hide();
+                $("#methodbyYear2").hide();
+                $("#PvNbyYear2").hide();
+                $("#fembyYear2").hide();
+                $("#MvFbyCountry2").hide();
+                $("#racebyCountry2").hide();
+                $("#methodbyCountry2").hide();
+                $("#PvNbyCountry2").hide();
+                $("#fembyCountry2").hide();
+            });
+            $("#racebyYear").click(function() {
+                $("#racebyYear2").show();
+                $("#captionText").show();
+                $("#captionText").text("This graph depicts the frequency of racial terms across each year.");
+                $(".matrixChunk").css({
+                    '-webkit-filter': 'brightness(50%)',
+                });
+                $("#racebyYear").css({
+                    '-webkit-filter': 'brightness(100%)',
+                });
+
+                $("#racebyText2").hide();
+                $("#methodbyText2").hide();
+                $("#PvNbyText2").hide();
+                $("#fembyText2").hide();
+                $("#MvFbyYear2").hide();
+                $("#MvFbyText2").hide();
+                $("#methodbyYear2").hide();
+                $("#PvNbyYear2").hide();
+                $("#fembyYear2").hide();
+                $("#MvFbyCountry2").hide();
+                $("#racebyCountry2").hide();
+                $("#methodbyCountry2").hide();
+                $("#PvNbyCountry2").hide();
+                $("#fembyCountry2").hide();
+            });
+            $("#methodbyYear").click(function() {
+                $("#methodbyYear2").show();
+                $("#captionText").show();
+                $("#captionText").text("This graph depicts the ratio of critical terms across each year.");
+                $(".matrixChunk").css({
+                    '-webkit-filter': 'brightness(50%)',
+                });
+                $("#methodbyYear").css({
+                    '-webkit-filter': 'brightness(100%)',
+                });
+
+                $("#racebyText2").hide();
+                $("#methodbyText2").hide();
+                $("#PvNbyText2").hide();
+                $("#fembyText2").hide();
+                $("#MvFbyYear2").hide();
+                $("#racebyYear2").hide();
+                $("#MvFbyText2").hide();
+                $("#PvNbyYear2").hide();
+                $("#fembyYear2").hide();
+                $("#MvFbyCountry2").hide();
+                $("#racebyCountry2").hide();
+                $("#methodbyCountry2").hide();
+                $("#PvNbyCountry2").hide();
+                $("#fembyCountry2").hide();
+            });
+            $("#PvNbyYear").click(function() {
+                $("#PvNbyYear2").show();
+                $("#captionText").show();
+                $("#captionText").text("This graph depicts the average sentiment across each year.");
+                $(".matrixChunk").css({
+                    '-webkit-filter': 'brightness(50%)',
+                });
+                $("#PvNbyYear").css({
+                    '-webkit-filter': 'brightness(100%)',
+                });
+
+                $("#racebyText2").hide();
+                $("#methodbyText2").hide();
+                $("#PvNbyText2").hide();
+                $("#fembyText2").hide();
+                $("#MvFbyYear2").hide();
+                $("#racebyYear2").hide();
+                $("#methodbyYear2").hide();
+                $("#MvFbyText2").hide();
+                $("#fembyYear2").hide();
+                $("#MvFbyCountry2").hide();
+                $("#racebyCountry2").hide();
+                $("#methodbyCountry2").hide();
+                $("#PvNbyCountry2").hide();
+                $("#fembyCountry2").hide();
+            });
+            $("#fembyYear").click(function() {
+                $("#fembyYear2").show();
+                $("#captionText").show();
+                $("#captionText").text("This graph depicts the frequency of feminist terms across each year.");
+                $(".matrixChunk").css({
+                    '-webkit-filter': 'brightness(50%)',
+                });
+                $("#fembyYear").css({
+                    '-webkit-filter': 'brightness(100%)',
+                });
+
+                $("#racebyText2").hide();
+                $("#methodbyText2").hide();
+                $("#PvNbyText2").hide();
+                $("#fembyText2").hide();
+                $("#MvFbyYear2").hide();
+                $("#racebyYear2").hide();
+                $("#methodbyYear2").hide();
+                $("#PvNbyYear2").hide();
+                $("#MvFbyText2").hide();
+                $("#MvFbyCountry2").hide();
+                $("#racebyCountry2").hide();
+                $("#methodbyCountry2").hide();
+                $("#PvNbyCountry2").hide();
+                $("#fembyCountry2").hide();
+            });
+            $("#MvFbyCountry").click(function() {
+                $("#MvFbyCountry2").show();
+                $("#captionText").show();
+                $("#captionText").text("This graph depicts the frequency of gendered terms across each country. Note that the US has the greatest difference by far!");
+                $(".matrixChunk").css({
+                    '-webkit-filter': 'brightness(50%)',
+                });
+                $("#MvFbyCountry").css({
+                    '-webkit-filter': 'brightness(100%)',
+                });
+
+                $("#racebyText2").hide();
+                $("#methodbyText2").hide();
+                $("#PvNbyText2").hide();
+                $("#fembyText2").hide();
+                $("#MvFbyYear2").hide();
+                $("#racebyYear2").hide();
+                $("#methodbyYear2").hide();
+                $("#PvNbyYear2").hide();
+                $("#fembyYear2").hide();
+                $("#MvFbyText2").hide();
+                $("#racebyCountry2").hide();
+                $("#methodbyCountry2").hide();
+                $("#PvNbyCountry2").hide();
+                $("#fembyCountry2").hide();
+            });
+            $("#racebyCountry").click(function() {
+                $("#racebyCountry2").show();
+                $("#captionText").show();
+                $("#captionText").text("This graph depicts the frequency of racial terms across each country. Note that these trends tend to match historical aspects of these coutries: the Caribbean focuses mostly on Creole compared to other races, while the US focuses more on black compared to other races, likely grappling with its historical ties to slavery. The international and UK levels are relatively similar in that they do not have a particular race that dominates the texts.");
+                $(".matrixChunk").css({
+                    '-webkit-filter': 'brightness(50%)',
+                });
+                $("#racebyCountry").css({
+                    '-webkit-filter': 'brightness(100%)',
+                });
+
+                $("#racebyText2").hide();
+                $("#methodbyText2").hide();
+                $("#PvNbyText2").hide();
+                $("#fembyText2").hide();
+                $("#MvFbyYear2").hide();
+                $("#racebyYear2").hide();
+                $("#methodbyYear2").hide();
+                $("#PvNbyYear2").hide();
+                $("#fembyYear2").hide();
+                $("#MvFbyCountry2").hide();
+                $("#MvFbyText2").hide();
+                $("#methodbyCountry2").hide();
+                $("#PvNbyCountry2").hide();
+                $("#fembyCountry2").hide();
+            });
+            $("#methodbyCountry").click(function() {
+                $("#methodbyCountry2").show();
+                $("#captionText").show();
+                $("#captionText").text("This graph depicts the frequency of critical terms across each country. Note that the Caribbean and the US focus mostly on race, while international and the UK focus on both postcolonialism and race. The Us also has the largest focus on geography of any country.");
+                $(".matrixChunk").css({
+                    '-webkit-filter': 'brightness(50%)',
+                });
+                $("#methodbyCountry").css({
+                    '-webkit-filter': 'brightness(100%)',
+                });
+
+                $("#racebyText2").hide();
+                $("#methodbyText2").hide();
+                $("#PvNbyText2").hide();
+                $("#fembyText2").hide();
+                $("#MvFbyYear2").hide();
+                $("#racebyYear2").hide();
+                $("#methodbyYear2").hide();
+                $("#PvNbyYear2").hide();
+                $("#fembyYear2").hide();
+                $("#MvFbyCountry2").hide();
+                $("#racebyCountry2").hide();
+                $("#MvFbyText2").hide();
+                $("#PvNbyCountry2").hide();
+                $("#fembyCountry2").hide();
+            });
+            $("#PvNbyCountry").click(function() {
+                $("#PvNbyCountry2").show();
+                $("#captionText").show();
+                $("#captionText").text("This graph depicts the average sentiment across each country. Note that international is the most negative of all countries. The US is also the most consistent in the type of sentiment is uses, as noted by the very small error bars.");
+                $(".matrixChunk").css({
+                    '-webkit-filter': 'brightness(50%)',
+                });
+                $("#PvNbyCountry").css({
+                    '-webkit-filter': 'brightness(100%)',
+                });
+
+                $("#racebyText2").hide();
+                $("#methodbyText2").hide();
+                $("#PvNbyText2").hide();
+                $("#fembyText2").hide();
+                $("#MvFbyYear2").hide();
+                $("#racebyYear2").hide();
+                $("#methodbyYear2").hide();
+                $("#PvNbyYear2").hide();
+                $("#fembyYear2").hide();
+                $("#MvFbyCountry2").hide();
+                $("#racebyCountry2").hide();
+                $("#methodbyCountry2").hide();
+                $("#MvFbyText2").hide();
+                $("#fembyCountry2").hide();
+            });
+            $("#fembyCountry").click(function() {
+                $("#fembyCountry2").show();
+                $("#captionText").show();
+                $("#captionText").text("This graph depicts the frequency of feminist terms across each country. Note that international and the UK are the highest. However, if this graph is compared to 'Frequency of Feminist Terms by Year,' the range of these are bars are actually a lot smaller, suggesting that these differences in frequency of feminist terms by country are relatively minor.");
+                $(".matrixChunk").css({
+                    '-webkit-filter': 'brightness(50%)',
+                });
+                $("#fembyCountry").css({
+                    '-webkit-filter': 'brightness(100%)',
+                });
+
+                $("#racebyText2").hide();
+                $("#methodbyText2").hide();
+                $("#PvNbyText2").hide();
+                $("#fembyText2").hide();
+                $("#MvFbyYear2").hide();
+                $("#racebyYear2").hide();
+                $("#methodbyYear2").hide();
+                $("#PvNbyYear2").hide();
+                $("#fembyYear2").hide();
+                $("#MvFbyCountry2").hide();
+                $("#racebyCountry2").hide();
+                $("#methodbyCountry2").hide();
+                $("#PvNbyCountry2").hide();
+                $("#MvFbyText2").hide();
+            });
+        }
+
+        $(window).on("load", function() {
+            $("#methodbyYear2").show();
+            $("#captionText").show();
+            $("#captionText").text("This graph depicts the ratio of critical terms across each year.");
+            $(".matrixChunk").css({
+                '-webkit-filter': 'brightness(50%)',
+            });
+            $("#methodbyYear").css({
+                '-webkit-filter': 'brightness(100%)',
+            });
+
+            $("#racebyText2").hide();
+            $("#methodbyText2").hide();
+            $("#PvNbyText2").hide();
+            $("#fembyText2").hide();
+            $("#MvFbyYear2").hide();
+            $("#racebyYear2").hide();
+            $("#MvFbyText2").hide();
+            $("#PvNbyYear2").hide();
+            $("#fembyYear2").hide();
+            $("#MvFbyCountry2").hide();
+            $("#racebyCountry2").hide();
+            $("#methodbyCountry2").hide();
+            $("#PvNbyCountry2").hide();
+            $("#fembyCountry2").hide();
+            matrixMenuControls();
+        })
+
+    </script>
+</body>
+
+</html>

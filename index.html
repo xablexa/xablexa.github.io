@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Axel Delano Fabiano Bax</title>
+    <link rel="stylesheet" type="text/css" href="personalWebsiteStyle.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="content" style="background-image: url('baltGenPNGZ.png');">
+            <div class=wrapper>
+                <div class="navbar" id="navbar">
+                    <a href="index.html" id="home" type="label">Home</a>
+                    <a href="personalWebsiteBiography.html" id="biography" type="label">Biography</a>
+                    <!--
+                    <a href="personalWebsiteProjects.html" id="projects" type="label">Projects</a>
+                    <a href="personalWebsiteSkills.html" id="skills" type="label">Skills</a>
+                -->
+                    <a href="personalWebsitePublications.html" id="publication" type="label">Publications</a>
+                    <a href="personalWebsiteMaps.html" type="label">Maps</a>
+                    <!--
+                    <a href="personalWebsiteProjectBlog.html" id="publication" type="label">Project Blog</a>
+                    -->
+                </div>
+            </div>
+
+            <div class="banner">
+                <p id="bannerGap"></p>
+            </div>
+
+            <div id="arrow">
+                <p id="arrowText">Scroll Down for More!
+                    <br>V
+                </p>
+            </div>
+            <p class="elevatorPitch">I am a PhD student in the Information Science department at Cornell University.
+                I am advised by <a href="https://mimno.infosci.cornell.edu/">David Mimno</a> and <a href="https://mattwilkens.com/">Matthew Wilkens</a>
+                in the Cultural Analytics Lab. My research uses computational methods to study trends in literature and literary reception, especially those 
+                which involve geography.
+            </p>
+            <p class="contact">You can contact me at my email: adb333 at cornell.edu
+                <br><a href="http://www.linkedin.com/in/axelbax">LinkedIn</a>
+                <br><a href="https://github.com/xablexa">Github</a>
+            </p>
+            <div class="images">
+                <!--
+                <a href="personalWebsiteBiography.html"><img src="personal.jpg" id="personal"></a>
+                <div class="personalOverlay">[Biography]</div>
+-->
+                <!--
+                <div class="imageContainer">
+                    <a href="personalWebsiteBiography.html"><img src="personal.jpg" id="personal"></a>
+                    <p class="personalOverlay">[Biography]</p>
+                </div>
+-->
+                <a href="personalWebsiteBiography.html"><img src="personal.jpg" id="personal"><p id="personalOverlay1">[Biography]</p></a>
+                <a><img src="futsal2.jpg" id="futsal"><p id="personalOverlay4"></p></a>
+                <a href="personalWebsitePublications.html"><img src="apparatus.jpg" id="apparatus2"><p id="personalOverlay2">[Publications]</p></a>
+                <a href="personalWebsiteMaps.html"><img src="map.JPG" id="map"><p id="personalOverlay3">[Maps]</p></a>
+                
+                
+            </div>
+            
+        </div>
+
+    </div>
+    <script>
+        var scrollMaxY = window.scrollMaxY || (document.documentElement.scrollHeight - document.documentElement.clientHeight)
+        window.onscroll = function() {
+            if ((window.pageYOffset / window.scrollMaxY * 100) < 3.5) {
+                document.getElementById("arrow").style.opacity = "1";
+            } else if ((window.pageYOffset / window.scrollMaxY * 100) < 7) {
+                document.getElementById("arrow").style.opacity = "0.9";
+            } else if ((window.pageYOffset / window.scrollMaxY * 100) < 10.5) {
+                document.getElementById("arrow").style.opacity = "0.8";
+            } else if ((window.pageYOffset / window.scrollMaxY * 100) < 14) {
+                document.getElementById("arrow").style.opacity = "0.7";
+            } else if ((window.pageYOffset / window.scrollMaxY * 100) < 17.5) {
+                document.getElementById("arrow").style.opacity = "0.6";
+            } else if ((window.pageYOffset / window.scrollMaxY * 100) < 21) {
+                document.getElementById("arrow").style.opacity = "0.5";
+            } else if ((window.pageYOffset / window.scrollMaxY * 100) < 24.5) {
+                document.getElementById("arrow").style.opacity = "0.4";
+            } else if ((window.pageYOffset / window.scrollMaxY * 100) < 28) {
+                document.getElementById("arrow").style.opacity = "0.3";
+            } else if ((window.pageYOffset / window.scrollMaxY * 100) < 31.5) {
+                document.getElementById("arrow").style.opacity = "0.2";
+            } else if ((window.pageYOffset / window.scrollMaxY * 100) < 35) {
+                document.getElementById("arrow").style.opacity = "0.1";
+            } else if ((window.pageYOffset / window.scrollMaxY * 100) < 38.5) {
+                document.getElementById("arrow").style.opacity = "0";
+            }
+            //            
+            //            if ((window.pageYOffset/window.scrollMaxY * 100) < 3.5) {
+            //                document.getElementById("body::-webkit-scrollbar-").style.background = "black";
+        };
+
+
+    </script>
+</body>
+
+</html>

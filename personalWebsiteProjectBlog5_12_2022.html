@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Axel Delano Fabiano Bax</title>
+    <link rel="stylesheet" type="text/css" href="personalWebsiteStyle.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <div class=wrapper>
+                <div class="navbar" id="navbar">
+                    <a href="index.html" id="home" type="label">Home</a>
+                    <a href="personalWebsiteBiography.html" id="biography" type="label">Biography</a>
+                    <a href="personalWebsiteProjects.html" id="projects" type="label">Projects</a>
+                    <a href="personalWebsiteSkills.html" id="skills" type="label">Skills</a>
+                    <a href="personalWebsitePublications.html" id="publication" type="label">Publications</a>
+                    <a href="personalWebsiteProjectBlog.html" id="publication" type="label">Project Blog</a>
+                </div>
+            </div>
+
+            <div class="banner">
+            </div>
+
+
+            <div class="blogPosts">
+                <div class="postBlurb">
+                    <h2>5/12/2022 - New Project: Scraping r/nosleep - Update</h2>
+                    <p class="blogTextFull" id="noPicture" href="personalWebsiteProjectBlog5_12_2022.html">
+                        This is just a very quick update on the Reddit scraping project.
+                        <br>
+                        <br>
+                        I've decided to not let this spiral out of control into some monstrosity that never gets finished. Therefore,
+                        I'm going to be splitting this project into two (maybe three) smaller ones with the following research questions:
+                        <br>
+                        <br>
+                        1) How have r/nosleep posts changed over time?
+                        <br>
+                        2) What is the strongest indicator of popularity?
+                        <br>
+                        <br>
+                        I think that I tried to keep these questions together, but they are really going after different pieces of
+                        information. For tracking changes over time, I'll want to look at changes in word frequency and maybe use topic
+                        modelling to track changes in particular topics over time. I may also do some sentiment analysis, if it seems useful
+                        once I start looking at this data. Doing this will also definitely require me to subset the data from Reddit with
+                        certain time ranges, which will require me to learn how to use Pushshift for querying posts.
+                        <br>
+                        <br>
+                        However, for looking at factors relating to popularity, I will need the metadata
+                        from the reddit posts I pull, as well as metadata about the authors of these posts. Additionally, it can be helpful
+                        to do some word embeddings for these posts to see how they compare in vector space to the entire corpus used. I can
+                        approximate this with current/recent data rather than a bunch of pulling historical data (at least to start).
+                        <br>
+                        <br>
+                        Additionally, the 'daily' updates feature is one that I will also update separately, making this more of a 3 part project.
+                        <br>
+                        <br>
+                        In terms of the process so far, I found that PRAW has limitations, mainly that I can only pull 100 posts at a time for
+                        1000 total posts. I'm also limited to the reddit categories (new, hot, rising, etc), which means I'm not getting a representative
+                        sample over the long-term. PRAW will be useful for gathering the most recent 24 hours' worth of posts (assuming they never
+                        exceed 1000). To work around this, I utilized pushshift instead. This allowed me to pull the entire history of r/nosleep
+                        going back until its inception in 2011 (minus most of 2013 which was lost to a server error). Pushshift is very flexible in
+                        terms of filtering, and so I subsetted with dates, going from March 24, 2011 (the date of creation for r/nosleep) until
+                        January 1st 2022. I've mostly finished looking at popularity metrics (no surprise, upvotes is generally the most useful),
+                        and I'll be posting that portion of the project soon on its own page.
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="bottomCredits">
+            <p class="bottomCreditsText">Last update: 3/22/2022 by Axel Bax. Fun fact: This website was built and is maintained by me!</p>
+        </div>
+    </div>
+    <script>
+
+    </script>
+</body>
+
+</html>

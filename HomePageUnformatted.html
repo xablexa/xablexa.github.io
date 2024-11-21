@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Axel Delano Fabiano Bax</title>
+    <link rel="stylesheet" type="text/css" href="personalWebsiteStyle.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="subHeader">
+                <div class="bottomLeft">Axel Delano Fabiano Bax</div>
+                <img src="headerPine.jpg" id="trees" alt="Header">
+            </div>
+            <div class=wrapper>
+                <div class="navbar" id="navbar">
+                    <a href="personalWebsiteHome.html" id="home" type="label">Home</a>
+                    <a href="personalWebsiteBiography.html" id="biography" type="label">Biography</a>
+                    <a href="personalWebsiteProjects.html" id="projects" type="label">Projects</a>
+                    <a href="personalWebsiteSkills.html" id="skills" type="label">Skills</a>
+                    <a href="personalWebsiteYoutubeChannel.html" id="youtube" type="label">YouTube Channel</a>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="images">
+                <a href="personalWebsiteBiography.html"><img src="personal.jpg" id="personal"></a>
+                <a href="personalWebsiteSkills.html"><img src="futsal.jpg" id="futsal"></a>
+                <a href="personalWebsiteProjects.html"><img src="map.JPG" id="map"></a>
+            </div>
+        </div>
+        <div class="bottomCredits">
+            <p class="bottomCreditsText">Last update: 12/31/2019 by Axel Bax. Fun fact: This website was built and maintained by me!</p>
+        </div>
+    </div>
+    <script>
+        window.onscroll = function() {
+            myFunction()
+        };
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+
+    </script>
+</body>
+
+</html>
