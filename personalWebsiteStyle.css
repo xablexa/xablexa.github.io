@@ -109,7 +109,7 @@ body {
     text-decoration: none;
 }
 
-#name {
+.navbar p {
     /*    background-color: #303030;*/
     color: #E0E0E0;
     margin-top: -5px;
