@@ -1202,3 +1202,14 @@ body {
 #novel-stats-table tbody tr > td.sorting_3 {
     color: #000000 !important;
 }
+
+/* Wrap the demo section table to allow horizontal scrolling without breaking layout */
+.demo-section {
+    overflow-x: auto;
+}
+
+/* Ensure the DataTables wrapper doesn't overflow the page */
+.dataTables_wrapper {
+    max-width: 100%;
+    overflow-x: auto;
+}

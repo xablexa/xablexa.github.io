@@ -127,12 +127,8 @@
         // Initialize DataTables with AJAX data source
         $('#novel-stats-table').DataTable({
             // Ensure autoWidth is still false to avoid resizing issues
-            autoWidth: false, 
+            autoWidth: false,
             
-            // NEW: Enable horizontal scrolling
-            scrollX: true, 
-            // NEW: Collapses table body height when the scrollbar is present
-            scrollCollapse: true, 
 
             // Critical option: Set orderClasses to false for all columns
             columnDefs: [
