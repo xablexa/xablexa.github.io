@@ -4,7 +4,8 @@
 <head>
     <title>Axel Delano Fabiano Bax</title>
     <link rel="stylesheet" type="text/css" href="personalWebsiteStyle.css">
-
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
 </head>
 
 <body>
@@ -14,10 +15,9 @@
                 <div class="navbar" id="navbar">
                     <a href="index.html" id="home" type="label">Home</a>
                     <a href="personalWebsiteBiography.html" id="biography" type="label">Biography</a>
-                    <a href="personalWebsiteProjects.html" id="projects" type="label">Projects</a>
-                    <a href="personalWebsiteSkills.html" id="skills" type="label">Skills</a>
-                    <a href="personalWebsitePublications.html" id="publication" type="label">Publications</a>
-                    <a href="personalWebsiteProjectBlog.html" id="publication" type="label">Project Blog</a>
+                    <a href="personalWebsitePublications.html" id="publication" type="label">Publications</a> 
+                    <a href="personalWebsiteMaps.html" type="label">Maps</a>
+                    <p id="name" type="label">Axel D. F. Bax</p>
                 </div>
             </div>
             
@@ -28,41 +28,182 @@
                 <ul>
                     <li></li>
                 </ul>
-                <!-- <div class="perceptionImage">
-                    <a href="https://perception.jhu.edu/"> <img src="apparatus.jpg" id="apparatus"> </a>
-                </div> -->
                 <div class="blogText" id="noPicture">
-                <p>Our project tracks every character movement that occurs in a novel, regardless of the scale of the movement.
-                    We have processed a few novels, but plan to process a sample of nearly 100,000 volumes of English language fiction.
-                    Our demo has 2 parts:
-                </p>
-                <ul>
-                    <li>Interactive Table of Movements per Novel</li>
-                    <li>Movement Annotator</li>
-                </ul>
+                    <p class="demo_text">The data used for this demo is composed of 38 volumes of English language fiction. We plan to refine our approach and then process 100,000 novels. We track the following features:</p>
+                    <ul class="demo_text">
+                        <li>Total Movements: the total number of movements that occur in the novel.</li>
+                        <li>Movement Type: literal, hypothetical, negative hypothetical, figurative, or implied.</li>
+                        <li>Movement Tense: past, concurrent, or future.</li>
+                        <li>Movement Scale: small scale movements, medium scale movements, and large scale movements.</li>
+                        <li>Characters: number of unique characters, number of instances of most occurring character (i.e. protagonist).</li>
+                        <li>Origins: number of unique starting locations, most occurring starting location.</li>
+                        <li>Destinations: number of unique destinations, most occurring starting destination.</li>
+                        <li>Transportation: number of times transportation was specified, most common mode of transportation.</li>
+                        <li>Quote: length of quote containing movement (# of characters).</li>
+                    </ul>
+
+                    <div class="demo-section">
+                        <h3>1. Interactive Novel Statistics Table</h3>
+                        <p class="demo_text">Below is a sortable and filterable table summarizing movement data across all novels.</p>
+                        <table id="novel-stats-table" class="display">
+                            <thead>
+                                <tr>
+                                    <th>Novel ID</th>
+                                    <th>Total Movements</th>
+                                    
+                                    <th>Hypothetical Count</th>
+                                    <th>Neg. Hypo Count</th>
+                                    <th>Literal Count</th>
+                                    <th>Figurative Count</th>
+                                    <th>Implied Count</th>
+                                    
+                                    <th>Past Tense Count</th>
+                                    <th>Concurrent Count</th>
+                                    <th>Future Count</th>
+
+                                    <th>Primary Char. Count</th>
+                                    <th>Total Unique Chars</th>
+                                    
+                                    <th>Primary Origin Count</th>
+                                    <th>Total Unique Origins</th>
+
+                                    <th>Primary Destination Count</th>
+                                    <th>Total Unique Destination</th>
+
+                                    <th>Primary Transportation Mode Count</th>
+                                    <th>Total Unique Transportation Modes</th>
+                                    
+                                    <th>Small Scale Count</th>
+                                    <th>Medium Scale Count</th>
+                                    <th>Large Scale Count</th>
+                                    
+                                    <th>Avg Text Length</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="demo-section">
+                        <h3>2. Movement Distribution Figures</h3>
+                        <div class="figure-container">
+                            <p class="demo_text">These figures illustrate the distribution of movement types, tenses, and scales of our sample of novels. We also compare the number of movements for the top few and bottom few novels.</p>
+
+                            <div class="figure-item">
+                                <h4>Distribution of Movement Types</h4>
+                                <img src="demo_images/movement_types_plot.png" alt="Box plot of movement types: Literal, Hypothetical, Negative Hypothetical, Figurative, Implied">
+                            </div>
+                            <div class="figure-item">
+                                <h4>Distribution of Movement Tenses</h4>
+                                <img src="demo_images/movement_tenses_plot.png" alt="Box plot of movement tenses: Past, Concurrent, Future">
+                            </div>
+                            <div class="figure-item wide-figure">
+                                <h4>Distribution of Movement Scales</h4>
+                                <img src="demo_images/movement_scales_plot.png" alt="Box plot of movement scales: Small, Medium, Large">
+                            </div>
+                            <div class="figure-item wide-figure">
+                                <h4>Movements per Novel (Top/Bottom 10)</h4>
+                                <img src="demo_images/movement_counts_bar_chart.png" alt="Bar chart comparing movement counts in top and bottom 10 novels">
+                            </div>
+                            <div class="figure-item wide-figure">
+                                <h4>Movements throughout the Novel (Top/Bottom 5)</h4>
+                                <img src="demo_images/lineplot.png" alt="Line plot of movement over the course of the novel, top 5 bottom 5 by total movement count">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-            <!-- <div class=PersonalProjects>
-                <h2>Personal Projects</h2>
-                <div class="personalProjectImage">
-                    <a> <img src="topRaw.jpg" id="desktop"> </a>
-                </div>
-                <p class="projectText">In addition to the projects that I have been lucky enough to help on, I also have a few random projects of my own. These projects are usually small,
-                    such as the semi-random number generator I made for assigning to variables in one of my experiments, or a walkthrough that I made to teach my mom
-                    how to use Leaflet in R. Other projects are a little bit bigger, like the set of furniture that I made in order to furnish my first real apartment (desktop to the left) or some
-                art pieces for my friends.</p>
-            </div> -->
-            
-            
-            </div>
+        </div>
         <div class="bottomCredits">
-            <p class="bottomCreditsText">Last update: 12/1/2021 by Axel Bax. Fun fact: This website was built and is maintained by me!</p>
+            <p class="bottomCreditsText">Last update: 12/9/2025 by Axel Bax.</p>
         </div>
     </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <script>
+    $(document).ready(function() {
+        // Initialize DataTables with AJAX data source
+        $('#novel-stats-table').DataTable({
+            // Ensure autoWidth is still false to avoid resizing issues
+            autoWidth: false, 
+            
+            // NEW: Enable horizontal scrolling
+            scrollX: true, 
+            // NEW: Collapses table body height when the scrollbar is present
+            scrollCollapse: true, 
 
-    </script>
+            // Critical option: Set orderClasses to false for all columns
+            columnDefs: [
+                {
+                    targets: '_all',
+                    orderClasses: false
+                }
+            ],
+            
+            ajax: {
+                url: 'novel_stats.json', 
+                dataSrc: ''             
+            },
+            
+            columns: [
+                // Novel ID (With your name cleanup render function)
+                { 
+                    data: 'novel_id', 
+                    title: 'Novel ID',
+                    render: function(data, type, row) {
+                        if (type === 'display' || type === 'filter') {
+                            let cleanName = data.replace('_indexed', '');
+                            if (cleanName.length > 20) {
+                                return cleanName.substring(0, 17) + '...';
+                            }
+                            return cleanName;
+                        }
+                        return data;
+                    }
+                },
+                // TOTAL MOVEMENTS
+                { data: 'movement_count', title: 'Total Movements' },
+                
+                // MOVEMENT TYPE COUNTS
+                { data: 'type_hypo_count', title: 'Hypothetical Count' },
+                { data: 'type_neghypo_count', title: 'Neg. Hypo Count' },
+                { data: 'type_lit_count', title: 'Literal Count' },
+                { data: 'type_fig_count', title: 'Figurative Count' },
+                { data: 'type_impl_count', title: 'Implied Count' },
+                
+                // TENSE COUNTS
+                { data: 'tense_past_count', title: 'Past Tense Count' },
+                { data: 'tense_conc_count', title: 'Concurrent Count' },
+                { data: 'tense_fut_count', title: 'Future Count' },
+                
+                // CHARACTER COUNTS
+                { data: 'char_1_count', title: 'Primary Char. Count' },
+                { data: 'num_char', title: 'Total Unique Chars' },
+
+                // CHARACTER COUNTS
+                { data: 'orig_1_count', title: 'Primary Origin Count' },
+                { data: 'num_orig', title: 'Total Unique Origins' },
+
+                // CHARACTER COUNTS
+                { data: 'dest_1_count', title: 'Primary Destination Count' },
+                { data: 'num_dest', title: 'Total Unique Destinations' },
+
+                // CHARACTER COUNTS
+                { data: 'transp_1_count', title: 'Primary Transportation Mode Count' },
+                { data: 'num_transp', title: 'Total Unique Transportation Modes' },
+                
+                // SCALE COUNTS
+                { data: 'scale_small_count', title: 'Small Scale Count' },
+                { data: 'scale_med_count', title: 'Medium Scale Count' },
+                { data: 'scale_large_count', title: 'Large Scale Count' },
+                
+                // AVERAGE/OTHER STATS
+                { data: 'text_len_avg', title: 'Avg Text Length' },
+            ]
+        });
+    });
+</script>
 </body>
-
 </html>

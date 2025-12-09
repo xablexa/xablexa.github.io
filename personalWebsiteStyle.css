@@ -990,3 +990,215 @@ body {
     -webkit-filter: grayscale(0%);
     filter: grayscale(0%);
 }
+
+
+/* DEMO PAGE */
+/* New styles for Demo Content */
+.demo_text {
+    width: 80%;
+    margin: auto;
+    text-align: left;
+    list-style-position: inside;
+}
+
+/* Style the overall sections */
+.demo-section {
+    max-width: 900px; /* Constrain content width */
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #303030; /* Darker background for content box */
+    border-radius: 8px;
+    text-align: left;
+}
+
+.demo-section h3, .demo-section h4 {
+    color: #AF0101; /* Your existing accent color */
+    border-bottom: 2px solid #AF0101;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* Style the table for DataTables compatibility and dark theme look */
+#novel-stats-table {
+    width: 100% !important; /* DataTables usually needs this */
+    margin-top: 10px;
+    color: #ffffff; /* Table text color */
+}
+
+/* DataTables default styling uses classes like .display which is fine, 
+   but we override text color for the dark theme */
+#novel-stats-table tbody tr td:first-child {
+    color: #E0E0E0 !important; /* Force light text color */
+    background-color: #303030 !important; /* Ensure background is dark for contrast */
+}
+
+
+
+/* Figure layout styles */
+.figure-container {
+    /* Retain: Flex container for figure items */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding-top: 10px;
+}
+
+.figure-item {
+    /* Change: Make the figure item itself take up 100% width and center its content */
+    flex: 1 1 100%; /* Make all figures span the full width */
+    min-width: 300px;
+    text-align: center; /* This centers the inline content (the image) */
+}
+
+/* Remove the specific 'wide-figure' class since all items now span 100% width */
+/* .figure-item.wide-figure {
+    flex: 1 1 100%;
+} */
+
+.figure-item img {
+    /* Change: Make the image block level for better margin control, and center it */
+    display: block; 
+    
+    /* Constraint: Ensure it takes up most of the parent width but doesn't exceed 800px or the parent's width */
+    max-width: 100%; 
+    max-height: 80vh; /* Optional: Prevent very tall images from dominating the screen */
+    
+    /* Center the block-level image */
+    margin-left: auto;
+    margin-right: auto;
+    
+    height: auto;
+    border: 1px solid #505050;
+    border-radius: 4px;
+}
+
+.figure-item h4 {
+    text-align: center;
+    border: none;
+    color: #E0E0E0;
+}
+/* Figure layout styles */
+.figure-item.wide-figure {
+    flex: 1 1 100%; /* Make the bar chart span the whole width */
+}
+
+/* Figure layout styles */
+.figure-container {
+    /* Retain: Flex container for figure items */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding-top: 10px;
+}
+
+.figure-item {
+    /* Change: Make the figure item itself take up 100% width and center its content */
+    flex: 1 1 100%; /* Make all figures span the full width */
+    min-width: 300px;
+    text-align: center; /* This centers the inline content (the image) */
+}
+
+/* Remove the specific 'wide-figure' class since all items now span 100% width */
+/* .figure-item.wide-figure {
+    flex: 1 1 100%;
+} */
+
+.figure-item img {
+    /* Change: Make the image block level for better margin control, and center it */
+    display: block; 
+    
+    /* Constraint: Ensure it takes up most of the parent width but doesn't exceed 800px or the parent's width */
+    max-width: 100%; 
+    max-height: 80vh; /* Optional: Prevent very tall images from dominating the screen */
+    
+    /* Center the block-level image */
+    margin-left: auto;
+    margin-right: auto;
+    
+    height: auto;
+    border: 1px solid #505050;
+    border-radius: 4px;
+}
+
+.figure-item h4 {
+    text-align: center;
+    border: none;
+    color: #E0E0E0;
+}
+
+.blogText {
+    width: 80%;
+}
+
+/* Fix DataTables colors for dark theme */
+
+/* Target the overall table and content to ensure dark background */
+.dataTables_wrapper {
+    color: #E0E0E0 !important; /* Ensure all text inside is light */
+}
+
+/* Base table style override for text color */
+#novel-stats-table {
+    color: #E0E0E0 !important;
+}
+
+/* Fix header text color */
+#novel-stats-table thead th {
+    color: #AF0101 !important; /* Your accent color for headers */
+    background-color: #252525 !important; /* Dark header background */
+}
+
+/* Ensure alternating row colors blend with the dark theme (verify these are still working) */
+.dataTables_wrapper .dataTable tbody tr:nth-child(odd) {
+    background-color: #303030 !important; 
+}
+
+.dataTables_wrapper .dataTable tbody tr:nth-child(even) {
+    background-color: #353535 !important; 
+}
+
+/* Fix the controls (Filter input, Length select) */
+.dataTables_wrapper .dataTables_filter input,
+.dataTables_wrapper .dataTables_length select {
+    background-color: #202020 !important;
+    color: #ffffff !important;
+    border: 1px solid #505050 !important;
+}
+
+/* Fix text for "Showing X of Y entries" and pagination */
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_paginate {
+    color: #E0E0E0 !important; 
+}
+
+/* Fix pagination buttons */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    color: #E0E0E0 !important;
+    border: 1px solid #505050 !important;
+    background-color: #353535 !important; 
+}
+
+/* Fix active and hover states for pagination buttons */
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover:not(.disabled) {
+    color: #ffffff !important;
+    background-color: #454545 !important;
+    border-color: #454545 !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color: #ffffff !important;
+    background-color: #AF0101 !important; /* Accent color for current page */
+    border-color: #AF0101 !important;
+}
+
+/* --- CRITICAL DATA TABLES SORTING OVERRIDE --- */
+
+/* Make text black in sorted columns so it's readable on white background */
+#novel-stats-table tbody tr > td.sorting_1,
+#novel-stats-table tbody tr > td.sorting_2,
+#novel-stats-table tbody tr > td.sorting_3 {
+    color: #000000 !important;
+}
