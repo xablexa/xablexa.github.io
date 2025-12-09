@@ -1203,6 +1203,10 @@ body {
     color: #000000 !important;
 }
 
+#novel-stats-table tbody tr > td:first-child {
+    color: #E0E0E0 !important;
+}
+
 /* Wrap the demo section table to allow horizontal scrolling without breaking layout */
 .demo-section {
     overflow-x: auto;
