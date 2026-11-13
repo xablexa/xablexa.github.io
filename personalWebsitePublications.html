@@ -64,7 +64,16 @@
 
     </div>
     <script>
-
+        // Size the CV viewer: 80% of the window height, but never less than
+        // 60% of the publication list's height (narrow windows make the list tall).
+        function sizePdf() {
+            var pdf = document.querySelector('.pdf');
+            var text = document.querySelector('.publicationText');
+            var h = Math.max(0.80 * window.innerHeight, 0.60 * text.offsetHeight);
+            pdf.style.height = h + 'px';
+        }
+        window.addEventListener('load', sizePdf);
+        window.addEventListener('resize', sizePdf);
     </script>
 </body>
 

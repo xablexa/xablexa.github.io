@@ -491,12 +491,15 @@ body {
     font-size: 24px;
 }
 #publicationContainer {
-    height: 95vh;
+    /* min-height (not height) + flow-root so the section, and the background
+       behind it, grows to fit the floated publication list as it gets longer */
+    min-height: 95vh;
+    display: flow-root;
 }
 .pdf {
     float:left;
     width: 43%;
-    height: 80%;
+    height: 80vh; /* fallback; script in personalWebsitePublications.html sets the real height */
     position: relative;
     padding: 5px;
     margin: 10px;
