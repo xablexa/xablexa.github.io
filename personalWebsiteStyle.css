@@ -192,120 +192,75 @@ body {
     color: #AF0101;
 }
 
-#personalOverlay1 {
-    position: absolute;
-    z-index: 3;
-    top: 48.5%;
-  left: 16.5%;
-    color: #AF0101;
-    text-shadow: 0px 0px 6px #202020;
-    transition: opacity .5s ease-in-out;
-    opacity: 0;
-    pointer-events: none;
+/* Home page collage: two columns of uncropped images.
+   Left:  bax.jpg (1:1) over futsal2.jpg (portrait)
+   Right: FINAL_page_distr.png (2:1) over map.JPG (~2:1)
+   The columns end at the same height when right width = 2.24 x left width.
+   (If you swap an image, that ratio changes: left heights = 1 + 1.225 per unit width,
+   right heights = 0.5 + 0.492 per unit width.) Play with these two numbers.
+   Overall size / side gaps: change the width in .homeCollage (centered, so gaps stay equal). */
+.homeCollage {
+    margin: 0 auto;
+    width: 88%;
+    padding: 15px 0;
 }
-
-#personalOverlay2 {
-    position: absolute;
-    z-index: 3;
-    top: 21%;
-  left: 71%;
-    color: #AF0101;
-    text-shadow: 0px 0px 6px #202020;
-    transition: opacity .5s ease-in-out;
-    opacity: 0;
-    pointer-events: none;
+#homeColLeft {
+    width: 30.5%;
+    margin-right: 1%;
 }
-#personalOverlay3 {
-    position: absolute;
-    z-index: 3;
-    top: 69%;
-  left: 64%;
-    color: #AF0101;
-    text-shadow: 0px 0px 6px #202020;
-    transition: opacity .5s ease-in-out;
-    opacity: 0;
-    pointer-events: none;
+#homeColRight {
+    width: 68.45%;
 }
-
-#personalOverlay4 {
-    position: absolute;
-    z-index: 3;
-    top: 21%;
-  left: 45%;
-    color: #AF0101;
-    text-shadow: 0px 0px 6px #202020;
-    transition: opacity .5s ease-in-out;
-    opacity: 0;
-    pointer-events: none;
-}
-    
-#personal {
+.homeCol {
     float: left;
-    width: 36.5%;
-    margin: 5px;
+}
+.homeCol a {
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
+}
+.homeCol img {
+    display: block;
+    width: 100%;
+    height: auto;
     transition: filter .5s ease-in-out;
     -webkit-filter: grayscale(0%);
     filter: grayscale(0%);
 }
-#personal:hover {
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
+.homeCollage::after {
+    content: "";
+    display: table;
+    clear: both;
 }
-#personal:hover + #personalOverlay1 {
-    opacity: 1;
-}
-
 #apparatus2 {
     background-color: #ffffff;
-    float: left;
-    top: 0px;
-    width: 38%;
-    height: auto;
-    margin: 5px;
-    transition: filter .5s ease-in-out;
-    -webkit-filter: grayscale(0%);
-    filter: grayscale(0%);
-}
-#apparatus2:hover {
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-}
-#apparatus2:hover + #personalOverlay2 {
-    opacity: 1;
 }
 
-#futsal {
-    float: left;
-    width: 17.5%;
-    margin: 5px;
-    transition: filter .5s ease-in-out;
-    -webkit-filter: grayscale(0%);
-    filter: grayscale(0%);
+/* hover labels, centered on their image */
+#personalOverlay1, #personalOverlay2, #personalOverlay3, #personalOverlay4 {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    color: #AF0101;
+    text-shadow: 0px 0px 6px #202020;
+    transition: opacity .5s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
 }
-/*
-#futsal:hover {
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-}
-#futsal:hover + #personalOverlay4 {
-    opacity: 1;
-}*/
 
-#map {
-    float: left;
-    width: 56.10%;
-    margin: 5px;
-    transition: filter .5s ease-in-out;
-    -webkit-filter: grayscale(0%);
-    filter: grayscale(0%);
-}
-#map:hover {
+#personal:hover, #apparatus2:hover, #map:hover {
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
 }
+#personal:hover + #personalOverlay1,
+#apparatus2:hover + #personalOverlay2,
 #map:hover + #personalOverlay3 {
     opacity: 1;
 }
+/* futsal has no link, so no hover effect */
 
 .elevatorPitch {
     width: 50%;
@@ -960,15 +915,19 @@ body {
 }
 #map4 {
     float: left;
-    width: 29.5%;
+    width: calc(29.51% - 6.2px);
     margin: 5px;
     transition: filter .5s ease-in-out;
     -webkit-filter: grayscale(0%);
     filter: grayscale(0%);
 }
+/* Bottom block on the Maps page: GIS map (map5) on the left; ellipse (map4) + NY (map7)
+   side by side above the world map (map6) on the right. These widths are solved so that
+   map4/map7 share a height, map6 spans map4+map7, the right stack matches map5's height,
+   and the row matches the top row's width (31.9 + 36.95 + 23.5 = 92.35%). */
 #map5 {
     float: left;
-    width: 47.85%;
+    width: calc(47.9% + 9.3px);
     margin: 5px;
     transition: filter .5s ease-in-out;
     -webkit-filter: grayscale(0%);
@@ -976,7 +935,7 @@ body {
 }
 #map6 {
     float: left;
-    width: 43%;
+    width: calc(44.44% + 0.7px);
     margin: 5px;
     transition: filter .5s ease-in-out;
     -webkit-filter: grayscale(0%);
@@ -984,7 +943,7 @@ body {
 }
 #map7 {
     float: left;
-    width: 15%;
+    width: calc(14.94% - 3.6px);
     margin: 5px;
     transition: filter .5s ease-in-out;
     -webkit-filter: grayscale(0%);
